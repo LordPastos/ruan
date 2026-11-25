@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static Bloom — an art &amp; music collective | Cover art, sounds &amp; facts</title>
+  <meta name="description" content="Static Bloom is a small personal art and music collective. Browse cover artwork, listen links, and short music facts — no accounts, no tracking, just the work.">
+
+  <!-- Open Graph (see README: social scrapers may require absolute URLs for og:image) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Static Bloom — an art &amp; music collective">
+  <meta property="og:description" content="Cover artwork, music-related facts, and outbound links to Telegram and SoundCloud. A small static site by friends, for everyone.">
+  <meta property="og:image" content="./assets/covers/sample-1.svg">
+  <meta property="og:url" content="./">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <p class="brand"><span aria-hidden="true">✺</span> Static Bloom</p>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#facts">Facts</a></li>
+          <li><a href="#links">Links</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Art and sound, made by friends.</h1>
+      <p>
+        Static Bloom is a tiny personal collective: cover artwork, liner notes from the
+        practice, and short music facts. Everything lives on one page — no accounts,
+        no algorithms, nothing to buy. Come back whenever something catches your eye.
+      </p>
+    </section>
+
+    <section class="resume" id="resume" hidden aria-labelledby="resume-heading">
+      <h2 id="resume-heading">Continue where you left off</h2>
+      <p class="hint">Saved in this browser only — nothing is sent anywhere.</p>
+      <div class="resume-buttons">
+        <button type="button" class="btn" id="resume-artwork-btn" hidden></button>
+        <button type="button" class="btn btn-secondary" id="resume-scroll-btn" hidden>Resume scrolling</button>
+      </div>
+    </section>
+
+    <section class="gallery-section" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading" tabindex="-1">Gallery</h2>
+
+      <div class="filters" role="group" aria-label="Filter artworks by type">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="music" aria-pressed="false">Music</button>
+        <button type="button" class="filter-btn" data-filter="cover" aria-pressed="false">Cover</button>
+        <button type="button" class="filter-btn" data-filter="mixed" aria-pressed="false">Mixed</button>
+      </div>
+
+      <!-- Pre-existing live region: never replaced, only its textContent changes -->
+      <div id="gallery-status" class="status" aria-live="polite" role="status"></div>
+
+      <div class="grid" id="gallery-grid" tabindex="-1"></div>
+    </section>
+
+    <section class="facts-section" aria-labelledby="facts-heading">
+      <h2 id="facts-heading">From the record crate</h2>
+
+      <!-- Pre-existing live region for fetch errors / empty state -->
+      <div id="facts-status" class="status" aria-live="polite" role="status"></div>
+
+      <ol class="fact-list" id="fact-list"></ol>
+    </section>
+
+    <section class="links-section" aria-labelledby="links-heading">
+      <h2 id="links-heading">Find us elsewhere</h2>
+      <p>We hang out here. These are real outbound links — they open in a new tab.</p>
+      <ul class="outbound">
+        <li>
+          <a href="https://t.me/yourhandle" target="_blank" rel="noopener noreferrer">Telegram — sketches, drops &amp; group chat</a>
+        </li>
+        <li>
+          <a href="https://soundcloud.com/yourhandle" target="_blank" rel="noopener noreferrer">SoundCloud — stems, mixes &amp; demos</a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Static Bloom. Code is MIT-licensed; all artwork remains © its creators.</p>
+      <p>A small static site — no cookies, no analytics, nothing that sleeps.</p>
+    </div>
+  </footer>
+
+  <dialog id="artwork-dialog" aria-labelledby="dialog-title">
+    <!-- All visual chrome lives on this inner wrapper so backdrop clicks
+         (event.target === dialog) can't be confused with padding clicks. -->
+    <div class="dialog-card">
+      <div class="dialog-head">
+        <h3 id="dialog-title">Artwork details</h3>
+        <button type="button" class="dialog-close" id="dialog-close" aria-label="Close">✕</button>
+      </div>
+      <div class="dialog-body" id="dialog-body"></div>
+    </div>
+  </dialog>
+</body>
+</html>

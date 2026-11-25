@@ -1,0 +1,27 @@
+[
+  {
+    "id": "fact-first-pressing",
+    "title": "The first 7\" ever pressed",
+    "body": "Before albums existed, the small 7-inch record at 45 rpm was how most people heard new songs — one track per side, usually under three minutes. Many of our mixes still borrow that A-side / B-side structure.",
+    "link": {
+      "text": "Read more about vinyl formats (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gramophone_record"
+    }
+  },
+  {
+    "id": "fact-nightbus-cover",
+    "title": "How Night Bus got its cover",
+    "body": "The artwork for 'Night Bus Frequencies' started as a photo of a fogged-up window; the halftone pattern you see is literally the grain of that photo pushed to the limit in a scanner.",
+    "relatedArtworkId": "nightbus-ep"
+  },
+  {
+    "id": "fact-riso-colors",
+    "title": "Why risograph prints look like that",
+    "body": "Risographs print one fluorescent ink at a time, so colors overlap imperfectly. That slight misregistration — the fuzzy edges and unexpected blends — is exactly what we try to imitate digitally in 'Paper Grooves'.",
+    "relatedArtworkId": "paper-grooves",
+    "link": {
+      "text": "Hear our process on SoundCloud",
+      "url": "https://soundcloud.com/yourhandle"
+    }
+  }
+]
