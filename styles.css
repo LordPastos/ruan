@@ -1,0 +1,556 @@
+/* ==========================================================================
+   Static Bloom — styles.css
+   Mobile-first, system fonts only, no external resources.
+   Color pairs below were checked for WCAG 2.1 AA:
+   - body text #1c1b22 on #faf8f4  ≈ 15.4:1
+   - muted text #5d5a66 on #faf8f4 ≈  6.3:1
+   - accent #a33608 on #faf8f4     ≈  5.9:1 (links, badges)
+   - accent #a33608 on #fff        ≈  6.3:1 (button text)
+   - header/footer #f0ece4 / #26242e ≈ 12.8:1
+   - focus ring #a33608 on light bg  ≈ 5.9:1 (≥3:1 for non-text UI)
+   ========================================================================== */
+
+:root {
+  --color-bg: #faf8f4;
+  --color-surface: #ffffff;
+  --color-band: #f0ece4;
+  --color-text: #1c1b22;
+  --color-text-muted: #5d5a66;
+  --color-accent: #a33608;
+  --color-accent-strong: #7e2a06;
+  --color-border: #d8d2c6;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* disabled again under prefers-reduced-motion */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.wrap {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+
+h1 {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-strong);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -4rem;
+  z-index: 10;
+  background: var(--color-accent);
+  color: #ffffff;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+/* ---------- Focus states (kept visible even with reduced motion) ---------- */
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  background: var(--color-band);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+}
+
+.brand {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.nav-list a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: var(--space-5) var(--space-4);
+  max-width: 46rem;
+}
+
+/* ---------- Resume section ---------- */
+
+.resume {
+  background: var(--color-band);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.resume h2 {
+  margin-bottom: var(--space-1);
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.resume-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #ffffff;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+}
+
+.btn:hover {
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+.btn-secondary:hover {
+  background: var(--color-band);
+  color: var(--color-accent-strong);
+}
+
+/* ---------- Filters ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.filter-btn {
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.filter-btn[aria-pressed="true"] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* ---------- Status / live regions ---------- */
+
+.status {
+  min-height: 0;
+}
+
+.status:not(:empty) {
+  background: var(--color-band);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+/* ---------- Gallery grid: 1 col phones, 2 cols ≥560px, 3 cols ≥900px ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  padding-bottom: var(--space-5);
+}
+
+@media (min-width: 35em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 56.25em) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  width: 100%;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(28, 27, 34, 0.15);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: var(--space-3);
+}
+
+.card-title {
+  font-weight: 700;
+  margin: 0 0 var(--space-1);
+}
+
+.card-meta {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+/* ---------- Facts ---------- */
+
+.facts-section {
+  padding-bottom: var(--space-5);
+}
+
+.fact-list {
+  display: grid;
+  gap: var(--space-3);
+  list-style-position: inside;
+}
+
+.fact-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+}
+
+.fact-card h3 {
+  margin-bottom: var(--space-1);
+  font-size: 1.05rem;
+}
+
+.fact-card p {
+  margin-bottom: var(--space-2);
+}
+
+.fact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.view-artwork-btn {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: none;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: var(--radius);
+  padding: 0.15rem 0.7rem;
+}
+
+.view-artwork-btn:hover {
+  background: var(--color-band);
+  color: var(--color-accent-strong);
+}
+
+/* ---------- Links section ---------- */
+
+.links-section {
+  padding-bottom: var(--space-5);
+}
+
+.outbound {
+  display: grid;
+  gap: var(--space-2);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--color-band);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding-block: var(--space-4);
+  font-size: 0.9rem;
+}
+
+/* ---------- Modal (<dialog>) ----------
+   The dialog element itself must have NO padding, NO background and NO
+   border so that any click landing on the dialog box is actually a click
+   on the backdrop (event.target === dialog). All visual chrome lives on
+   .dialog-card. */
+
+dialog {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  max-width: 100%;
+  max-height: 100%;
+  color: var(--color-text);
+}
+
+dialog::backdrop {
+  background: rgba(28, 27, 34, 0.6);
+}
+
+.dialog-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  width: min(92vw, 34rem);
+  max-height: 88vh;
+  overflow-y: auto;
+  animation: dialog-in 0.18s ease-out;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4) 0;
+}
+
+.dialog-head h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.dialog-close {
+  font: inherit;
+  cursor: pointer;
+  flex: none;
+  background: var(--color-band);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  width: 2.2rem;
+  height: 2.2rem;
+  line-height: 1;
+}
+
+.dialog-close:hover {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.dialog-body {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+
+.dialog-body img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-3);
+}
+
+.dialog-body dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-1) var(--space-3);
+  margin: 0 0 var(--space-3);
+}
+
+.dialog-body dt {
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.dialog-body dd {
+  margin: 0;
+}
+
+.dialog-body ul {
+  margin-bottom: var(--space-3);
+}
+
+.dialog-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  list-style: none;
+  padding: 0;
+}
+
+/* ---------- 404 page ---------- */
+
+.page-404 {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.page-404 a {
+  font-weight: 700;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card,
+  .card:hover {
+    transform: none;
+    transition: none;
+    box-shadow: none;
+  }
+
+  .dialog-card {
+    animation: none;
+  }
+
+  .skip-link {
+    transition: none;
+  }
+}

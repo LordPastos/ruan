@@ -1,0 +1,54 @@
+[
+  {
+    "id": "nightbus-ep",
+    "title": "Night Bus Frequencies",
+    "artist": "Mira K. & Tomas V.",
+    "year": 2025,
+    "type": "music",
+    "coverImage": "assets/covers/sample-1.svg",
+    "description": "A four-track EP recorded during late-night commutes between two studios. Field recordings of bus engines and rain are layered under minimal synth loops.",
+    "facts": [
+      "The whole EP was tracked on a single borrowed interface.",
+      "Track 3 uses a sample of the 02:14 night bus announcement."
+    ],
+    "links": {
+      "telegram": "https://t.me/yourhandle",
+      "soundcloud": "https://soundcloud.com/yourhandle"
+    },
+    "tags": ["synth", "field-recording", "night"]
+  },
+  {
+    "id": "paper-grooves",
+    "title": "Paper Grooves",
+    "artist": "Lena D.",
+    "year": 2024,
+    "type": "cover",
+    "coverImage": "assets/covers/sample-2.svg",
+    "description": "Sleeve artwork series for friends' self-releases: risograph-style scans of torn paper, halftone dots and hand-lettered titles.",
+    "facts": [
+      "Each piece was printed at home on a modified inkjet.",
+      "The lettering is drawn with a nib pen, then scanned at 1200 dpi."
+    ],
+    "links": {
+      "telegram": "https://t.me/yourhandle"
+    },
+    "tags": ["risograph", "lettering", "print"]
+  },
+  {
+    "id": "static-bloom",
+    "title": "Static Bloom",
+    "artist": "The whole collective",
+    "year": 2026,
+    "type": "mixed",
+    "coverImage": "assets/covers/sample-3.svg",
+    "description": "Our zine-and-single combo: six collages responding to six short tracks, made in a shared weekend session and released together.",
+    "facts": [
+      "Every artist had 60 minutes per piece, no do-overs.",
+      "The zine folds into a poster."
+    ],
+    "links": {
+      "soundcloud": "https://soundcloud.com/yourhandle"
+    },
+    "tags": ["collage", "zine", "session"]
+  }
+]
